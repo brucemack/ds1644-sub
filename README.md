@@ -20,10 +20,34 @@ Photograph of DS1643 in an S-COM 5K to demonstrate that mechanical clearance isn
 Notes Related to Memory Tester
 ==============================
 
-A memory testing device was created to validate 5V RAM/PROM parts.  This section contains technical details.
+A memory testing device was created to read/write/validate 5V RAM/PROM parts. This could be used to test
+that a chip/socket is working correctly or to make copies of NVRAM/EPROM/EEPROMs. 
 
-Shift Register Chain Layout
----------------------------
+The tester can support 16 address lines, 8 bit-directional data lines, and three control lines (~OE, ~WE, ~CS, etc),
+for a total of 27 signals.  Only 6 GPIO pins on a microcontroller are needed to drive the tester.
+
+The testing cycle writes/reads different patterns into the 
+memory chip to make sure there are no bad bits.
+
+Here's what the tester PCB looks like:
+
+![Tester1](docs/IMG_0842.jpeg)
+
+Here it is wired into an Arduino Nano and a 28-pin ZIF socket
+for testing:
+
+![Tester2](docs/IMG_0838.jpeg)
+
+Here's a vintage [Toshiba 2K SRAM chip](http://matthieu.benoit.free.fr/cross/data_sheets/TMM2016AP.pdf) that was tested successfully:
+
+![SRAM](docs/IMG_0840.jpg)
+
+Judging from [this databook](http://www.bitsavers.org/components/toshiba/_dataBook/1983_Toshiba_MOS_Memory.pdf) an the date code
+on that chip I'm assuming it's a 1984 part.  We've come a long
+way in 40 years!
+
+Tester Shift Register Chain Layout
+----------------------------------
        
        |    Control     |   Address Low   |  Address High   |    Data Out     |   Data In      |
        +----------------+-----------------+-----------------+-----------------+----------------+
@@ -39,8 +63,10 @@ Notes
 * The high-order bit of the Control register (OE) controls the -OE of the Data Out register. So
 you must write a zero into this bit when generating a write into a memory device.
 
-Control Interface
------------------
+Tester Control Interface
+------------------------
+
+(From left to right)
 
 * Pin 1: Data Out - High-order bit out of the Data In register (i.e. I7 in the above diagram)
 * Pin 2: Data In - Low-order bit into the Control register (i.e. C0 in the above diagram)
