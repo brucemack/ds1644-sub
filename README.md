@@ -79,8 +79,8 @@ Tester Control Interface
 * Pin 2: Data In - Low-order bit into the Control register (i.e. C0 in the above diagram)
 * Pin 3: Latch In (+) - Only relevant for the Data In register.  Rising edge locks the memory device output 
 into the Data In register.  Make sure that shift/load is set to 1 before doing this.
-* Pin 4: Shift/Load - Only relevant for the Data In register.  Set low (shift) before performing
-serial shift, set high (load) before latching in.
+* Pin 4: Shift/Load - Only relevant for the Data In register.  Issue a zero pulse after the Latch In clock
+to move data into the shift register, preparing to shift out the data that was read.
 * Pin 5: Clock (+) - Rising edge shifts one position to the right.  Make sure that shift/load is set to 0 before
 doing this.
 * Pin 6: Latch Out (+) - Rising edge makes the contents of the Control, Address Low, Address High, and Data Out
