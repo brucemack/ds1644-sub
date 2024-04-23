@@ -3,9 +3,15 @@ Overview
 The goal of this project is to produce an adaptor board to allow a "modern" M48T35 NVRAM/RTC chip to be 
 used where a
 "vintage" DS1643/DS1644 used to be.  This is relevant for owners of S-COM
-5K/6K/7K repeater controllers.
+5K/6K/7K repeater controllers.  The old Dallas Semi parts are
+hard to find in DIP format, and at this point their batteries are likely 
+dead.
 
 (Testing is still in process - more documentation will follow if this works.)
+
+Here's what the board looks like:
+
+![Adaptor](docs/ada.jpeg)
 
 References
 ==========
