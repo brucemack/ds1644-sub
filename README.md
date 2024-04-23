@@ -1,10 +1,11 @@
 Overview
 ========
-An adaptor board to allow a "modern" M48T35 NVRAM/RTC chip to be used where a
+The goal of this project is to produce an adaptor board to allow a "modern" M48T35 NVRAM/RTC chip to be 
+used where a
 "vintage" DS1643/DS1644 used to be.  This is relevant for owners of S-COM
 5K/6K/7K repeater controllers.
 
-(More documentation will follow if this works.)
+(Testing is still in process - more documentation will follow if this works.)
 
 References
 ==========
@@ -17,11 +18,11 @@ Photograph of DS1643 in an S-COM 5K to demonstrate that mechanical clearance isn
 
 ![DS1643](docs/IMG_0771.jpg)
 
-Notes Related to Memory Tester
-==============================
+Notes Related to a Memory Tester
+================================
 
-A memory testing device was created to read/write/validate 5V RAM/PROM parts. This could be used to test
-that a chip/socket is working correctly or to make copies of NVRAM/EPROM/EEPROMs. 
+A memory testing device was created to read/write/validate 5V RAM/PROM parts, along with any related adaptor boards. This could be used to test
+that a chip/socket is working correctly or to make a copy of an NVRAM/EPROM/EEPROM. 
 
 The tester can support 16 address lines, 8 bit-directional data lines, and three control lines (~OE, ~WE, ~CS, etc),
 for a total of 27 signals.  Only 6 GPIO pins on a microcontroller are needed to drive the tester.
