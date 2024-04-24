@@ -24,6 +24,28 @@ Photograph of DS1643 in an S-COM 5K to demonstrate that mechanical clearance isn
 
 ![DS1643](docs/IMG_0771.jpg)
 
+Notes on Testing a DS1643
+=========================
+
+I have access to an S-COM 5K that has a DS1643 NVRAM/RTC chip in it. I've been using that 
+to do some testing.  I pulled the DS1643 out of the controller and put it into my memory tester (see more detail on that below). It works fine.
+
+![DS1643](docs/IMG_0846.jpeg)
+
+This chip is interesting in that the RTC is mapped into the 
+very top few bytes of the NVRAM.  On the 8K part you need to read from locations 0x1ff9 to 0x1fff to get the time/date.  IMPORTANT: Remember that all numbers are in 
+BCD format with the 1's digit in the low-order nibble and the 10's digit in the high-order nibble of each byte.
+
+When I powered up the chip and read the time from the magic 
+locations I was amazed to see that it was correct to within <2 hours after an unknown period
+of time of non-use. Obviously, the battery is still good in this 
+particular unit. :-)
+
+![DS1643](docs/IMG_0844.jpeg)
+
+The S-COM 7K uses a 32K part. Everything should be the same,
+except the memory map locations of the RTC are higher.
+
 Notes Related to a Memory Tester
 ================================
 
