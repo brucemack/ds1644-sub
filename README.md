@@ -24,11 +24,13 @@ Photograph of DS1643 in an S-COM 5K to demonstrate that mechanical clearance isn
 
 ![DS1643](docs/IMG_0771.jpg)
 
-Notes on Testing a DS1643
-=========================
+Notes on Testing an Original DS1643
+===================================
 
 I have access to an S-COM 5K that has a DS1643 NVRAM/RTC chip in it. I've been using that 
-to do some testing.  I pulled the DS1643 out of the controller and put it into my memory tester (see more detail on that below). It works fine.
+to do some testing.  I pulled the DS1643 out of the controller and put it into my memory tester (see more detail on that below). 
+
+The date code on the part is 1996.  It works fine!
 
 ![DS1643](docs/IMG_0846.jpeg)
 
